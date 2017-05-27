@@ -1,0 +1,3 @@
+[submodule "code/RxSwift"]
+	path = code/RxSwift
+	url = git@github.com:ReactiveX/RxSwift.git
