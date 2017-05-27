@@ -14,12 +14,15 @@ open class BaseViewController: UIViewController {
     var didSystemAutoLayout = false
     var didAnimateComplete = false
     
+    // MARK: - 生命周期
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let appIdx = NSStringFromClass(self.classForCoder).range(of: Tools.BundleName)?.upperBound {
-            Log.i("进入页面"+NSStringFromClass(self.classForCoder).substring(from: appIdx))
-        }
+        #if DEBUG
+            if let appIdx = self.getClassName().range(of: Tools.BundleName)?.upperBound {
+                Log.i("进入页面"+NSStringFromClass(self.classForCoder).substring(from: appIdx))
+            }
+        #endif
     }
     
     open override func viewDidDisappear(_ animated: Bool) {
@@ -29,9 +32,19 @@ open class BaseViewController: UIViewController {
             didAnimateComplete = true
         }
         
-        if let appIdx = NSStringFromClass(self.classForCoder).range(of: Tools.BundleName)?.upperBound {
-            Log.i("离开页面"+NSStringFromClass(self.classForCoder).substring(from: appIdx))
-        }
+        #if DEBUG
+            if let appIdx = self.getClassName().range(of: Tools.BundleName)?.upperBound {
+                Log.i("离开页面"+NSStringFromClass(self.classForCoder).substring(from: appIdx))
+            }
+        #endif
+    }
+    
+    deinit {
+        #if DEBUG
+            if let appIdx = self.getClassName().range(of: Tools.BundleName)?.upperBound {
+                Log.i("销毁页面"+self.getClassName().substring(from: appIdx))
+            }
+        #endif
     }
     
     open override func updateViewConstraints() {
@@ -54,4 +67,40 @@ open class BaseViewController: UIViewController {
     open func didSnpKitUiLoad() -> Void{}
     open func didSystemAutoLayoutComplete() -> Void{}
 
+    // MARK: - navigation相关
+    open func showLeftButton(_ colorImage: UIImage = NavigationTool.navBlackBackImage ?? NavigationTool.navClearImage) {
+        let leftBtn = UIButton(type: .custom)
+        leftBtn.setImage(colorImage, for: UIControlState())
+        leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
+        leftBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        leftBtn.adjustsImageWhenHighlighted = false
+        let leftBtnItem = UIBarButtonItem(customView: leftBtn)
+        leftBtn.addTarget(self, action: #selector(self.backBtnAction), for: .touchUpInside)
+        self.navigationItem.setLeftBarButton(leftBtnItem, animated: false)
+    }
+    
+    open func backBtnAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    open func showWriteNavController() {
+        self.navigationController?.navigationBar.setBackgroundImage(NavigationTool.navWhiteImage, for: .default)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
+        UIApplication.shared.statusBarStyle = .default
+        self.navigationController?.navigationBar.shadowImage = nil
+    }
+    
+    open func showClearNavController() {
+        self.navigationController?.navigationBar.setBackgroundImage(NavigationTool.navClearImage, for: .default)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    open func showCustomNavController(_ colorImage: UIImage, _ titleColor: UIColor = UIColor.white) {
+        self.navigationController?.navigationBar.setBackgroundImage(colorImage, for: .default)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: titleColor]
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
 }

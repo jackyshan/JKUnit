@@ -8,8 +8,8 @@
 
 import Foundation
 
-class Log {
-    static func i<T>(_ message: T,
+open class Log {
+    open static func i<T>(_ message: T,
                   file: String = #file,
                   method: String = #function,
                   line: Int = #line)

@@ -8,7 +8,30 @@
 
 import Foundation
 
-class Tools {
+open class Tools {
     // MARK: bundleName
-    internal static let BundleName = Bundle.main.infoDictionary!["CFBundleName"] as! String
+    open static let BundleName = Bundle.main.infoDictionary!["CFBundleName"] as! String
+    
+    // MARK: bundleResource
+    private static var jkBundle:Bundle? = nil
+    public static func getResourceFromBunlde(filename: String) -> UIImage? {
+        var result:UIImage? = nil
+        
+        if jkBundle == nil {
+            let bundle = Bundle(for: Tools.self)
+            
+            if let resourcePath = bundle.path(forResource: "JKUnitBundle", ofType: "bundle") {
+                if let resourcesBundle = Bundle(path: resourcePath) {
+                    jkBundle = resourcesBundle
+                }
+            }
+        }
+        
+        if jkBundle != nil {
+            result = UIImage.init(named: filename, in: jkBundle, compatibleWith: nil)
+        }
+        
+        return result
+    }
+
 }

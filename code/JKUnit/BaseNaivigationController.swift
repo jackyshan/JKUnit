@@ -8,6 +8,6 @@
 
 import UIKit
 
-class BaseNaivigationController: UINavigationController {
+open class BaseNaivigationController: UINavigationController {
 
 }
