@@ -29,6 +29,32 @@
 		6D35F00A1ED94B95002F8477 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D35EFF81ED94B95002F8477 /* IQToolbar.swift */; };
 		6D35F00B1ED94B95002F8477 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D35EFF91ED94B95002F8477 /* IQUIView+IQKeyboardToolbar.swift */; };
 		6D35F00C1ED94B95002F8477 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D35EFFB1ED94B95002F8477 /* IQKeyboardManager.bundle */; };
+		6D6B9F031ED9D11C003D4EE4 /* AnyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE41ED9D11C003D4EE4 /* AnyExtensions.swift */; };
+		6D6B9F041ED9D11C003D4EE4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE51ED9D11C003D4EE4 /* Configuration.swift */; };
+		6D6B9F051ED9D11C003D4EE4 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE61ED9D11C003D4EE4 /* CustomDateFormatTransform.swift */; };
+		6D6B9F061ED9D11C003D4EE4 /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE71ED9D11C003D4EE4 /* DataTransform.swift */; };
+		6D6B9F071ED9D11C003D4EE4 /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE81ED9D11C003D4EE4 /* DateFormatterTransform.swift */; };
+		6D6B9F081ED9D11C003D4EE4 /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE91ED9D11C003D4EE4 /* DateTransform.swift */; };
+		6D6B9F091ED9D11C003D4EE4 /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EEA1ED9D11C003D4EE4 /* Deserializer.swift */; };
+		6D6B9F0A1ED9D11C003D4EE4 /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EEB1ED9D11C003D4EE4 /* EnumTransform.swift */; };
+		6D6B9F0B1ED9D11C003D4EE4 /* HandyJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6B9EEC1ED9D11C003D4EE4 /* HandyJSON.h */; };
+		6D6B9F0C1ED9D11C003D4EE4 /* HelpingMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EED1ED9D11C003D4EE4 /* HelpingMapper.swift */; };
+		6D6B9F0D1ED9D11C003D4EE4 /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EEE1ED9D11C003D4EE4 /* HexColorTransform.swift */; };
+		6D6B9F121ED9D11C003D4EE4 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EF31ED9D11C003D4EE4 /* ISO8601DateTransform.swift */; };
+		6D6B9F141ED9D11C003D4EE4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EF51ED9D11C003D4EE4 /* Logger.swift */; };
+		6D6B9F151ED9D11C003D4EE4 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EF61ED9D11C003D4EE4 /* Metadata.swift */; };
+		6D6B9F161ED9D11C003D4EE4 /* NominalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EF71ED9D11C003D4EE4 /* NominalType.swift */; };
+		6D6B9F171ED9D11C003D4EE4 /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EF81ED9D11C003D4EE4 /* NSDecimalNumberTransform.swift */; };
+		6D6B9F181ED9D11C003D4EE4 /* OtherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EF91ED9D11C003D4EE4 /* OtherExtension.swift */; };
+		6D6B9F191ED9D11C003D4EE4 /* PointerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EFA1ED9D11C003D4EE4 /* PointerType.swift */; };
+		6D6B9F1A1ED9D11C003D4EE4 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EFB1ED9D11C003D4EE4 /* Properties.swift */; };
+		6D6B9F1B1ED9D11C003D4EE4 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EFC1ED9D11C003D4EE4 /* Protocol.swift */; };
+		6D6B9F1C1ED9D11C003D4EE4 /* ReflectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EFD1ED9D11C003D4EE4 /* ReflectionHelper.swift */; };
+		6D6B9F1D1ED9D11C003D4EE4 /* Serializer+Legacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EFE1ED9D11C003D4EE4 /* Serializer+Legacy.swift */; };
+		6D6B9F1E1ED9D11C003D4EE4 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EFF1ED9D11C003D4EE4 /* Serializer.swift */; };
+		6D6B9F1F1ED9D11C003D4EE4 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9F001ED9D11C003D4EE4 /* TransformOf.swift */; };
+		6D6B9F201ED9D11C003D4EE4 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9F011ED9D11C003D4EE4 /* TransformType.swift */; };
+		6D6B9F211ED9D11C003D4EE4 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9F021ED9D11C003D4EE4 /* URLTransform.swift */; };
 		6D798EF31ED906C60019E1C1 /* ImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D798EF21ED906C60019E1C1 /* ImageTool.swift */; };
 		6D798EF51ED907DB0019E1C1 /* NavigationTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D798EF41ED907DB0019E1C1 /* NavigationTool.swift */; };
 		6D798F141ED91C130019E1C1 /* ColorTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D798F131ED91C130019E1C1 /* ColorTool.swift */; };
@@ -75,6 +101,32 @@
 		6D35EFF81ED94B95002F8477 /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
 		6D35EFF91ED94B95002F8477 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		6D35EFFB1ED94B95002F8477 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		6D6B9EE41ED9D11C003D4EE4 /* AnyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyExtensions.swift; sourceTree = "<group>"; };
+		6D6B9EE51ED9D11C003D4EE4 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		6D6B9EE61ED9D11C003D4EE4 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatTransform.swift; sourceTree = "<group>"; };
+		6D6B9EE71ED9D11C003D4EE4 /* DataTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTransform.swift; sourceTree = "<group>"; };
+		6D6B9EE81ED9D11C003D4EE4 /* DateFormatterTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterTransform.swift; sourceTree = "<group>"; };
+		6D6B9EE91ED9D11C003D4EE4 /* DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransform.swift; sourceTree = "<group>"; };
+		6D6B9EEA1ED9D11C003D4EE4 /* Deserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deserializer.swift; sourceTree = "<group>"; };
+		6D6B9EEB1ED9D11C003D4EE4 /* EnumTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumTransform.swift; sourceTree = "<group>"; };
+		6D6B9EEC1ED9D11C003D4EE4 /* HandyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandyJSON.h; sourceTree = "<group>"; };
+		6D6B9EED1ED9D11C003D4EE4 /* HelpingMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpingMapper.swift; sourceTree = "<group>"; };
+		6D6B9EEE1ED9D11C003D4EE4 /* HexColorTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexColorTransform.swift; sourceTree = "<group>"; };
+		6D6B9EF31ED9D11C003D4EE4 /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO8601DateTransform.swift; sourceTree = "<group>"; };
+		6D6B9EF51ED9D11C003D4EE4 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		6D6B9EF61ED9D11C003D4EE4 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		6D6B9EF71ED9D11C003D4EE4 /* NominalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NominalType.swift; sourceTree = "<group>"; };
+		6D6B9EF81ED9D11C003D4EE4 /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
+		6D6B9EF91ED9D11C003D4EE4 /* OtherExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherExtension.swift; sourceTree = "<group>"; };
+		6D6B9EFA1ED9D11C003D4EE4 /* PointerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerType.swift; sourceTree = "<group>"; };
+		6D6B9EFB1ED9D11C003D4EE4 /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		6D6B9EFC1ED9D11C003D4EE4 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		6D6B9EFD1ED9D11C003D4EE4 /* ReflectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionHelper.swift; sourceTree = "<group>"; };
+		6D6B9EFE1ED9D11C003D4EE4 /* Serializer+Legacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Serializer+Legacy.swift"; sourceTree = "<group>"; };
+		6D6B9EFF1ED9D11C003D4EE4 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		6D6B9F001ED9D11C003D4EE4 /* TransformOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOf.swift; sourceTree = "<group>"; };
+		6D6B9F011ED9D11C003D4EE4 /* TransformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformType.swift; sourceTree = "<group>"; };
+		6D6B9F021ED9D11C003D4EE4 /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
 		6D798EF21ED906C60019E1C1 /* ImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTool.swift; sourceTree = "<group>"; };
 		6D798EF41ED907DB0019E1C1 /* NavigationTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTool.swift; sourceTree = "<group>"; };
 		6D798EFF1ED90FF20019E1C1 /* JKUnitBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKUnitBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,9 +235,43 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		6D6B9EE31ED9D11C003D4EE4 /* HandyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				6D6B9EE41ED9D11C003D4EE4 /* AnyExtensions.swift */,
+				6D6B9EE51ED9D11C003D4EE4 /* Configuration.swift */,
+				6D6B9EE61ED9D11C003D4EE4 /* CustomDateFormatTransform.swift */,
+				6D6B9EE71ED9D11C003D4EE4 /* DataTransform.swift */,
+				6D6B9EE81ED9D11C003D4EE4 /* DateFormatterTransform.swift */,
+				6D6B9EE91ED9D11C003D4EE4 /* DateTransform.swift */,
+				6D6B9EEA1ED9D11C003D4EE4 /* Deserializer.swift */,
+				6D6B9EEB1ED9D11C003D4EE4 /* EnumTransform.swift */,
+				6D6B9EEC1ED9D11C003D4EE4 /* HandyJSON.h */,
+				6D6B9EED1ED9D11C003D4EE4 /* HelpingMapper.swift */,
+				6D6B9EEE1ED9D11C003D4EE4 /* HexColorTransform.swift */,
+				6D6B9EF31ED9D11C003D4EE4 /* ISO8601DateTransform.swift */,
+				6D6B9EF51ED9D11C003D4EE4 /* Logger.swift */,
+				6D6B9EF61ED9D11C003D4EE4 /* Metadata.swift */,
+				6D6B9EF71ED9D11C003D4EE4 /* NominalType.swift */,
+				6D6B9EF81ED9D11C003D4EE4 /* NSDecimalNumberTransform.swift */,
+				6D6B9EF91ED9D11C003D4EE4 /* OtherExtension.swift */,
+				6D6B9EFA1ED9D11C003D4EE4 /* PointerType.swift */,
+				6D6B9EFB1ED9D11C003D4EE4 /* Properties.swift */,
+				6D6B9EFC1ED9D11C003D4EE4 /* Protocol.swift */,
+				6D6B9EFD1ED9D11C003D4EE4 /* ReflectionHelper.swift */,
+				6D6B9EFE1ED9D11C003D4EE4 /* Serializer+Legacy.swift */,
+				6D6B9EFF1ED9D11C003D4EE4 /* Serializer.swift */,
+				6D6B9F001ED9D11C003D4EE4 /* TransformOf.swift */,
+				6D6B9F011ED9D11C003D4EE4 /* TransformType.swift */,
+				6D6B9F021ED9D11C003D4EE4 /* URLTransform.swift */,
+			);
+			path = HandyJSON;
+			sourceTree = "<group>";
+		};
 		6D7108A91ED80E9000FA0568 /* 第三方 */ = {
 			isa = PBXGroup;
 			children = (
+				6D6B9EE31ED9D11C003D4EE4 /* HandyJSON */,
 				6D35EFE51ED94B95002F8477 /* IQKeyboardManagerSwift */,
 			);
 			name = "第三方";
@@ -298,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D96C3A81ED8099C003CD4EB /* JKUnit.h in Headers */,
+				6D6B9F0B1ED9D11C003D4EE4 /* HandyJSON.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,32 +500,57 @@
 			files = (
 				6D35EFFC1ED94B95002F8477 /* IQNSArray+Sort.swift in Sources */,
 				6D35F00B1ED94B95002F8477 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				6D6B9F171ED9D11C003D4EE4 /* NSDecimalNumberTransform.swift in Sources */,
 				6D35EFDD1ED946DA002F8477 /* UIButton+UI.swift in Sources */,
 				6D35F0081ED94B95002F8477 /* IQPreviousNextView.swift in Sources */,
 				6DD463841ED8185C00192E0A /* BaseViewController.swift in Sources */,
 				6D35EFDF1ED947F3002F8477 /* VeryCodeBtn.swift in Sources */,
+				6D6B9F041ED9D11C003D4EE4 /* Configuration.swift in Sources */,
 				6D798F1A1ED91F7B0019E1C1 /* NSObject+Extension.swift in Sources */,
 				6D35F0061ED94B95002F8477 /* IQTextView.swift in Sources */,
 				6D35EFDA1ED94639002F8477 /* UIView+UI.swift in Sources */,
+				6D6B9F1B1ED9D11C003D4EE4 /* Protocol.swift in Sources */,
 				6D35EFFE1ED94B95002F8477 /* IQUITextFieldView+Additions.swift in Sources */,
+				6D6B9F071ED9D11C003D4EE4 /* DateFormatterTransform.swift in Sources */,
 				6D35F0091ED94B95002F8477 /* IQTitleBarButtonItem.swift in Sources */,
 				6D35EFFF1ED94B95002F8477 /* IQUIView+Hierarchy.swift in Sources */,
 				6D35F0071ED94B95002F8477 /* IQBarButtonItem.swift in Sources */,
 				6D35F0031ED94B95002F8477 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				6D6B9F091ED9D11C003D4EE4 /* Deserializer.swift in Sources */,
 				6D35F0051ED94B95002F8477 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				6D35F0021ED94B95002F8477 /* IQKeyboardManagerConstants.swift in Sources */,
+				6D6B9F1A1ED9D11C003D4EE4 /* Properties.swift in Sources */,
 				6D35F00A1ED94B95002F8477 /* IQToolbar.swift in Sources */,
+				6D6B9F141ED9D11C003D4EE4 /* Logger.swift in Sources */,
 				6DD4638F1ED81D8D00192E0A /* Tools.swift in Sources */,
 				6DD4638D1ED8197700192E0A /* Log.swift in Sources */,
+				6D6B9F081ED9D11C003D4EE4 /* DateTransform.swift in Sources */,
 				6D35EFFD1ED94B95002F8477 /* IQUIScrollView+Additions.swift in Sources */,
+				6D6B9F0D1ED9D11C003D4EE4 /* HexColorTransform.swift in Sources */,
+				6D6B9F121ED9D11C003D4EE4 /* ISO8601DateTransform.swift in Sources */,
+				6D6B9F1D1ED9D11C003D4EE4 /* Serializer+Legacy.swift in Sources */,
 				6DD463891ED818AC00192E0A /* BaseNaivigationController.swift in Sources */,
+				6D6B9F191ED9D11C003D4EE4 /* PointerType.swift in Sources */,
+				6D6B9F1C1ED9D11C003D4EE4 /* ReflectionHelper.swift in Sources */,
+				6D6B9F151ED9D11C003D4EE4 /* Metadata.swift in Sources */,
 				6D35F0001ED94B95002F8477 /* IQUIViewController+Additions.swift in Sources */,
+				6D6B9F161ED9D11C003D4EE4 /* NominalType.swift in Sources */,
+				6D6B9F031ED9D11C003D4EE4 /* AnyExtensions.swift in Sources */,
+				6D6B9F211ED9D11C003D4EE4 /* URLTransform.swift in Sources */,
+				6D6B9F051ED9D11C003D4EE4 /* CustomDateFormatTransform.swift in Sources */,
 				6D798EF51ED907DB0019E1C1 /* NavigationTool.swift in Sources */,
 				6D798EF31ED906C60019E1C1 /* ImageTool.swift in Sources */,
+				6D6B9F1F1ED9D11C003D4EE4 /* TransformOf.swift in Sources */,
+				6D6B9F0A1ED9D11C003D4EE4 /* EnumTransform.swift in Sources */,
 				6D35F0011ED94B95002F8477 /* IQUIWindow+Hierarchy.swift in Sources */,
+				6D6B9F181ED9D11C003D4EE4 /* OtherExtension.swift in Sources */,
+				6D6B9F0C1ED9D11C003D4EE4 /* HelpingMapper.swift in Sources */,
 				6D35F0041ED94B95002F8477 /* IQKeyboardManager.swift in Sources */,
 				6DD463861ED8187500192E0A /* BaseUIView.swift in Sources */,
 				6D798F141ED91C130019E1C1 /* ColorTool.swift in Sources */,
+				6D6B9F061ED9D11C003D4EE4 /* DataTransform.swift in Sources */,
+				6D6B9F201ED9D11C003D4EE4 /* TransformType.swift in Sources */,
+				6D6B9F1E1ED9D11C003D4EE4 /* Serializer.swift in Sources */,
 				6DD463821ED8182C00192E0A /* BaseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
