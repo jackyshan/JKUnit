@@ -61,6 +61,10 @@
 		6D798F1A1ED91F7B0019E1C1 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D798F191ED91F7B0019E1C1 /* NSObject+Extension.swift */; };
 		6D798F1F1ED931A10019E1C1 /* JKUnitBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D798EFF1ED90FF20019E1C1 /* JKUnitBundle.bundle */; };
 		6D96C3A81ED8099C003CD4EB /* JKUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D96C3A61ED8099C003CD4EB /* JKUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DC2BBA51EDC0A8400407A09 /* BLEScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2BBA41EDC0A8400407A09 /* BLEScanner.swift */; };
+		6DC2BBA71EDC0B2500407A09 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC2BBA61EDC0B2500407A09 /* CoreBluetooth.framework */; };
+		6DC2BBA91EDC11AF00407A09 /* BleDeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2BBA81EDC11AF00407A09 /* BleDeviceModel.swift */; };
+		6DC2BBAB1EDC199000407A09 /* BleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2BBAA1EDC199000407A09 /* BleHelper.swift */; };
 		6DD463821ED8182C00192E0A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD463811ED8182C00192E0A /* BaseTableViewCell.swift */; };
 		6DD463841ED8185C00192E0A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD463831ED8185C00192E0A /* BaseViewController.swift */; };
 		6DD463861ED8187500192E0A /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD463851ED8187500192E0A /* BaseUIView.swift */; };
@@ -137,6 +141,10 @@
 		6D96C3A31ED8099C003CD4EB /* JKUnit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JKUnit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D96C3A61ED8099C003CD4EB /* JKUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKUnit.h; sourceTree = "<group>"; };
 		6D96C3A71ED8099C003CD4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DC2BBA41EDC0A8400407A09 /* BLEScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEScanner.swift; sourceTree = "<group>"; };
+		6DC2BBA61EDC0B2500407A09 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		6DC2BBA81EDC11AF00407A09 /* BleDeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleDeviceModel.swift; sourceTree = "<group>"; };
+		6DC2BBAA1EDC199000407A09 /* BleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleHelper.swift; sourceTree = "<group>"; };
 		6DD463811ED8182C00192E0A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		6DD463831ED8185C00192E0A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6DD463851ED8187500192E0A /* BaseUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
@@ -157,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC2BBA71EDC0B2500407A09 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,13 +332,25 @@
 		6D96C3CF1ED80D00003CD4EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DC2BBA61EDC0B2500407A09 /* CoreBluetooth.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DC2BBA31EDC0A7400407A09 /* ble */ = {
+			isa = PBXGroup;
+			children = (
+				6DC2BBA41EDC0A8400407A09 /* BLEScanner.swift */,
+				6DC2BBA81EDC11AF00407A09 /* BleDeviceModel.swift */,
+				6DC2BBAA1EDC199000407A09 /* BleHelper.swift */,
+			);
+			name = ble;
 			sourceTree = "<group>";
 		};
 		6DD4637F1ED816DF00192E0A /* 自定义 */ = {
 			isa = PBXGroup;
 			children = (
+				6DC2BBA31EDC0A7400407A09 /* ble */,
 				6D35EFDB1ED9466D002F8477 /* views */,
 				6DD4638B1ED8194F00192E0A /* tools */,
 			);
@@ -503,6 +524,7 @@
 				6D6B9F171ED9D11C003D4EE4 /* NSDecimalNumberTransform.swift in Sources */,
 				6D35EFDD1ED946DA002F8477 /* UIButton+UI.swift in Sources */,
 				6D35F0081ED94B95002F8477 /* IQPreviousNextView.swift in Sources */,
+				6DC2BBA51EDC0A8400407A09 /* BLEScanner.swift in Sources */,
 				6DD463841ED8185C00192E0A /* BaseViewController.swift in Sources */,
 				6D35EFDF1ED947F3002F8477 /* VeryCodeBtn.swift in Sources */,
 				6D6B9F041ED9D11C003D4EE4 /* Configuration.swift in Sources */,
@@ -524,6 +546,7 @@
 				6D6B9F141ED9D11C003D4EE4 /* Logger.swift in Sources */,
 				6DD4638F1ED81D8D00192E0A /* Tools.swift in Sources */,
 				6DD4638D1ED8197700192E0A /* Log.swift in Sources */,
+				6DC2BBAB1EDC199000407A09 /* BleHelper.swift in Sources */,
 				6D6B9F081ED9D11C003D4EE4 /* DateTransform.swift in Sources */,
 				6D35EFFD1ED94B95002F8477 /* IQUIScrollView+Additions.swift in Sources */,
 				6D6B9F0D1ED9D11C003D4EE4 /* HexColorTransform.swift in Sources */,
@@ -548,6 +571,7 @@
 				6D35F0041ED94B95002F8477 /* IQKeyboardManager.swift in Sources */,
 				6DD463861ED8187500192E0A /* BaseUIView.swift in Sources */,
 				6D798F141ED91C130019E1C1 /* ColorTool.swift in Sources */,
+				6DC2BBA91EDC11AF00407A09 /* BleDeviceModel.swift in Sources */,
 				6D6B9F061ED9D11C003D4EE4 /* DataTransform.swift in Sources */,
 				6D6B9F201ED9D11C003D4EE4 /* TransformType.swift in Sources */,
 				6D6B9F1E1ED9D11C003D4EE4 /* Serializer.swift in Sources */,

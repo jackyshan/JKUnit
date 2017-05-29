@@ -33,5 +33,15 @@ open class Tools {
         
         return result
     }
+    
+    // MARK: app version
+    open static func getAppVersion() -> String {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+    }
+    
+    // MARK: app build version
+    open static func getAppBuildVersion() -> String {
+        return Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+    }
 
 }
