@@ -587,7 +587,6 @@
 		6D96C3A51ED8099C003CD4EB /* JKUnit */ = {
 			isa = PBXGroup;
 			children = (
-				6DD463901ED81F1300192E0A /* OC */,
 				6DD4638A1ED818B000192E0A /* 扩展类 */,
 				6DD463801ED8180A00192E0A /* 基础类 */,
 				6DD4637F1ED816DF00192E0A /* 自定义 */,
@@ -918,13 +917,6 @@
 				6D798F131ED91C130019E1C1 /* ColorTool.swift */,
 			);
 			name = tools;
-			sourceTree = "<group>";
-		};
-		6DD463901ED81F1300192E0A /* OC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = OC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
