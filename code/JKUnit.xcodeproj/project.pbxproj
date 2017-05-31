@@ -62,7 +62,6 @@
 		6D798F1F1ED931A10019E1C1 /* JKUnitBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D798EFF1ED90FF20019E1C1 /* JKUnitBundle.bundle */; };
 		6D96C3A81ED8099C003CD4EB /* JKUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D96C3A61ED8099C003CD4EB /* JKUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DC2BBA51EDC0A8400407A09 /* BLEScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2BBA41EDC0A8400407A09 /* BLEScanner.swift */; };
-		6DC2BBA71EDC0B2500407A09 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC2BBA61EDC0B2500407A09 /* CoreBluetooth.framework */; };
 		6DC2BBA91EDC11AF00407A09 /* BleDeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2BBA81EDC11AF00407A09 /* BleDeviceModel.swift */; };
 		6DC2BBAB1EDC199000407A09 /* BleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2BBAA1EDC199000407A09 /* BleHelper.swift */; };
 		6DD463821ED8182C00192E0A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD463811ED8182C00192E0A /* BaseTableViewCell.swift */; };
@@ -142,7 +141,6 @@
 		6D96C3A61ED8099C003CD4EB /* JKUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKUnit.h; sourceTree = "<group>"; };
 		6D96C3A71ED8099C003CD4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DC2BBA41EDC0A8400407A09 /* BLEScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEScanner.swift; sourceTree = "<group>"; };
-		6DC2BBA61EDC0B2500407A09 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		6DC2BBA81EDC11AF00407A09 /* BleDeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleDeviceModel.swift; sourceTree = "<group>"; };
 		6DC2BBAA1EDC199000407A09 /* BleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleHelper.swift; sourceTree = "<group>"; };
 		6DD463811ED8182C00192E0A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DC2BBA71EDC0B2500407A09 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +328,6 @@
 		6D96C3CF1ED80D00003CD4EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6DC2BBA61EDC0B2500407A09 /* CoreBluetooth.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -734,10 +730,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/JKUnit/Realm",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = JKUnit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -764,10 +757,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/JKUnit/Realm",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = JKUnit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
