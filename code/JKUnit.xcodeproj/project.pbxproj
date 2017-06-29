@@ -29,6 +29,7 @@
 		6D35F00A1ED94B95002F8477 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D35EFF81ED94B95002F8477 /* IQToolbar.swift */; };
 		6D35F00B1ED94B95002F8477 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D35EFF91ED94B95002F8477 /* IQUIView+IQKeyboardToolbar.swift */; };
 		6D35F00C1ED94B95002F8477 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D35EFFB1ED94B95002F8477 /* IQKeyboardManager.bundle */; };
+		6D4E23351EFF967300E9B02A /* BaseTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E23341EFF967300E9B02A /* BaseTableViewAdapter.swift */; };
 		6D6B9F031ED9D11C003D4EE4 /* AnyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE41ED9D11C003D4EE4 /* AnyExtensions.swift */; };
 		6D6B9F041ED9D11C003D4EE4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE51ED9D11C003D4EE4 /* Configuration.swift */; };
 		6D6B9F051ED9D11C003D4EE4 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE61ED9D11C003D4EE4 /* CustomDateFormatTransform.swift */; };
@@ -104,6 +105,7 @@
 		6D35EFF81ED94B95002F8477 /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
 		6D35EFF91ED94B95002F8477 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		6D35EFFB1ED94B95002F8477 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		6D4E23341EFF967300E9B02A /* BaseTableViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewAdapter.swift; sourceTree = "<group>"; };
 		6D6B9EE41ED9D11C003D4EE4 /* AnyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyExtensions.swift; sourceTree = "<group>"; };
 		6D6B9EE51ED9D11C003D4EE4 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6D6B9EE61ED9D11C003D4EE4 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatTransform.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				6DD463831ED8185C00192E0A /* BaseViewController.swift */,
 				6DD463851ED8187500192E0A /* BaseUIView.swift */,
 				6DD463881ED818AC00192E0A /* BaseNaivigationController.swift */,
+				6D4E23341EFF967300E9B02A /* BaseTableViewAdapter.swift */,
 			);
 			name = "基础类";
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				6D6B9F031ED9D11C003D4EE4 /* AnyExtensions.swift in Sources */,
 				6D6B9F211ED9D11C003D4EE4 /* URLTransform.swift in Sources */,
 				6D6B9F051ED9D11C003D4EE4 /* CustomDateFormatTransform.swift in Sources */,
+				6D4E23351EFF967300E9B02A /* BaseTableViewAdapter.swift in Sources */,
 				6D798EF51ED907DB0019E1C1 /* NavigationTool.swift in Sources */,
 				6D798EF31ED906C60019E1C1 /* ImageTool.swift in Sources */,
 				6D6B9F1F1ED9D11C003D4EE4 /* TransformOf.swift in Sources */,
@@ -723,7 +727,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -750,7 +754,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;

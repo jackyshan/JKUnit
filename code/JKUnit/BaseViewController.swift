@@ -79,8 +79,23 @@ open class BaseViewController: UIViewController {
         self.navigationItem.setLeftBarButton(leftBtnItem, animated: false)
     }
     
+    open func showRightButton(_ colorImage: UIImage = NavigationTool.navClearImage) {
+        let rightBtn = UIButton(type: .custom)
+        rightBtn.setImage(colorImage, for: UIControlState())
+        rightBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        rightBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        rightBtn.adjustsImageWhenHighlighted = false
+        let rightBtnItem = UIBarButtonItem(customView: rightBtn)
+        rightBtn.addTarget(self, action: #selector(self.rightBtnAction), for: .touchUpInside)
+        self.navigationItem.setRightBarButton(rightBtnItem, animated: false)
+    }
+    
     open func backBtnAction() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    open func rightBtnAction() {
+        
     }
     
     open func showWriteNavController() {
