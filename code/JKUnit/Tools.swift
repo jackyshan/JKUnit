@@ -43,5 +43,40 @@ open class Tools {
     open static func getAppBuildVersion() -> String {
         return Bundle.main.infoDictionary?["CFBundleVersion"] as! String
     }
+    
+    // MARK: delay block
+    public typealias Task = (_ cancel : Bool) -> Void
+    open static func delay(time:Int64, task:@escaping ()->()) ->  Task? {
+        
+        func dispatch_later(block:@escaping ()->()) {
+            let timeE:DispatchTime = DispatchTime.now() + Double(time*Int64(NSEC_PER_SEC)) / Double(NSEC_PER_SEC);
+            DispatchQueue.main.asyncAfter(deadline: timeE, execute: block)
+        }
+        
+        var closure: (()->())? = task
+        var result: Task?
+        
+        let delayedClosure: Task = {
+            cancel in
+            if let internalClosure = closure {
+                if (cancel == false) {
+                    DispatchQueue.main.async(execute: internalClosure);
+                }
+            }
+            
+            closure = nil
+            result = nil
+        }
+        
+        result = delayedClosure
+        
+        dispatch_later {
+            if let delayedClosure = result {
+                delayedClosure(false)
+            }
+        }
+        
+        return result
+    }
 
 }
