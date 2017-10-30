@@ -179,6 +179,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     // MARK: 被动方式(通知setNotifyValue:forCharacteristic)收到蓝牙设备返回数据
     public func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
+        Log.i("收到通知")
     }
     
     // MARK: - 6、公共业务
