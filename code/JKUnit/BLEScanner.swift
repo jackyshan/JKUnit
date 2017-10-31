@@ -18,6 +18,8 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     open var bleOpenFail: (() -> Void)?
     open var bleOpenSucc: (() -> Void)?
+    open var bleWriteSucc: (() -> Void)?
+    open var bleUpdateValue: ((_ data: Data) -> Void)?
     
     open var bleScanResult: ((_ devices: [BleDeviceModel]) -> Void)?
     private var scanBleResult = [BleDeviceModel]() {
@@ -25,8 +27,9 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
             bleScanResult?(scanBleResult)
         }
     }
+    open var bleConnectedDevice: BleDeviceModel?
     
-    open var bleConnectSucc: ((_ characteristic: CBCharacteristic) -> Void)?
+    open var bleConnectSucc: ((_ device: BleDeviceModel) -> Void)?
     open var bleConnectFail: ((_ peripheral: CBPeripheral) -> Void)?
     
     // MARK: - 2、私有属性
@@ -110,6 +113,8 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         Log.i("和\(peripheral.name ?? "未知设备")设备连接成功。")
         peripheral.discoverServices(nil)
+        peripheral.delegate = self
+        centerManager?.stopScan()
         Log.i("扫描\(peripheral.name ?? "未知设备")设备上的服务..")
     }
     
@@ -131,55 +136,85 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     // MARK: 发现服务
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         if error != nil {
-            Log.i("发现服务时发生错误: \(String(describing: error))")
+            Log.i("查找 services 时 \(String(describing: peripheral.name)) 报错 \(String(describing: error?.localizedDescription))")
             return
         }
         
         Log.i("发现服务 ..")
         
         for service in peripheral.services! {
-            peripheral.discoverCharacteristics(nil, for: service)
+            //需要连接的 CBCharacteristic 的 UUID
+            if let UUID = scanUUID {
+                if service.uuid.uuidString == UUID {
+                    peripheral.discoverCharacteristics(nil, for: service)
+                    break
+                }
+            }
+            else {
+                peripheral.discoverCharacteristics(nil, for: service)
+            }
         }
     }
     
     // MARK: 发现特征
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        Log.i("发现服务 \(service.uuid), 特性数: \(String(describing: service.characteristics?.count))")
+        if error != nil {
+            Log.i("查找 characteristics 时 \(String(describing: peripheral.name)) 报错 \(String(describing: error?.localizedDescription))")
+            return
+        }
         
         guard let characteristics = service.characteristics else {
             return
         }
         
+        Log.i("发现服务特征 \(service.uuid), 特性数: \(String(describing: service.characteristics?.count))")
+        
         //取第一个特征
         guard let characteristic = characteristics.first else {
             return
         }
+        
         let devices = scanBleResult.filter({$0.isEqual(peripheral)})
-        devices.first?.characteristic = characteristics.first
-        bleConnectSucc?(characteristic)
+        devices.first?.characteristic = characteristic
+        if let device = devices.first {
+            bleConnectedDevice = device
+            bleConnectSucc?(device)
+        }
         
         for c in characteristics {
             if let data = c.value {
                 peripheral.readValue(for: c)
+                //设置 characteristic 的 notifying 属性 为 true ， 表示接受广播
+                peripheral.setNotifyValue(true, for: c)
+
                 Log.i("特性值byte： \((data as NSData).bytes)")
                 Log.i("特性值string： \(String(describing: String(data: data, encoding: String.Encoding.utf8)))")
             }
         }
     }
     
-    // MARK: 发送蓝牙设备成功
+    // MARK: 发送写入蓝牙设备成功
     public func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
-        
+        Log.i("发送写入蓝牙设备成功")
+        bleWriteSucc?()
     }
     
     // MARK: 主动方式(readValueForCharacteristic)收到蓝牙设备返回数据,readValueForCharacteristic方法之后
     public func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        Log.i("主动方式收到蓝牙设备返回数据")
         
+        if let data = characteristic.value {
+            bleUpdateValue?(data)
+        }
     }
     
     // MARK: 被动方式(通知setNotifyValue:forCharacteristic)收到蓝牙设备返回数据
     public func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
-        Log.i("收到通知")
+        Log.i("被动方式收到蓝牙设备返回数据")
+        
+        if let data = characteristic.value {
+            bleUpdateValue?(data)
+        }
     }
     
     // MARK: - 6、公共业务
@@ -196,7 +231,6 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     open func connect(_ peripheral: CBPeripheral) {
         centerManager?.connect(peripheral, options: [CBConnectPeripheralOptionNotifyOnConnectionKey : true, CBConnectPeripheralOptionNotifyOnDisconnectionKey : true, CBConnectPeripheralOptionNotifyOnNotificationKey : true])
-        centerManager?.stopScan()
     }
     
     open func disConnect(_ peripheral: CBPeripheral) {
