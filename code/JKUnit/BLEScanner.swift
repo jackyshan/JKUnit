@@ -174,22 +174,20 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
             return
         }
         
-        let devices = scanBleResult.filter({$0.isEqual(peripheral)})
+        let devices = scanBleResult.filter({$0.peripheral!.isEqual(peripheral)})
         devices.first?.characteristic = characteristic
         if let device = devices.first {
             bleConnectedDevice = device
             bleConnectSucc?(device)
+            
+            peripheral.readValue(for: characteristic)
+            //设置 characteristic 的 notifying 属性 为 true ， 表示接受广播
+            peripheral.setNotifyValue(true, for: characteristic)
         }
         
-        for c in characteristics {
-            if let data = c.value {
-                peripheral.readValue(for: c)
-                //设置 characteristic 的 notifying 属性 为 true ， 表示接受广播
-                peripheral.setNotifyValue(true, for: c)
-
-                Log.i("特性值byte： \((data as NSData).bytes)")
-                Log.i("特性值string： \(String(describing: String(data: data, encoding: String.Encoding.utf8)))")
-            }
+        if let data = characteristic.value {
+            Log.i("特性值byte： \((data as NSData).bytes)")
+            Log.i("特性值string： \(String(describing: String(data: data, encoding: String.Encoding.utf8)))")
         }
     }
     
@@ -201,7 +199,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     // MARK: 主动方式(readValueForCharacteristic)收到蓝牙设备返回数据,readValueForCharacteristic方法之后
     public func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        Log.i("主动方式收到蓝牙设备返回数据")
+        Log.i("主动方式read收到蓝牙设备返回数据")
         
         if let data = characteristic.value {
             bleUpdateValue?(data)
@@ -210,7 +208,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     // MARK: 被动方式(通知setNotifyValue:forCharacteristic)收到蓝牙设备返回数据
     public func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
-        Log.i("被动方式收到蓝牙设备返回数据")
+        Log.i("被动方式nofity收到蓝牙设备返回数据")
         
         if let data = characteristic.value {
             bleUpdateValue?(data)
