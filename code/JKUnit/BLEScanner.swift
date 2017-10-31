@@ -196,6 +196,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     open func connect(_ peripheral: CBPeripheral) {
         centerManager?.connect(peripheral, options: [CBConnectPeripheralOptionNotifyOnConnectionKey : true, CBConnectPeripheralOptionNotifyOnDisconnectionKey : true, CBConnectPeripheralOptionNotifyOnNotificationKey : true])
+        centerManager?.stopScan()
     }
     
     open func disConnect(_ peripheral: CBPeripheral) {
