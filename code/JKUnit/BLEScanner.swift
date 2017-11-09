@@ -20,6 +20,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     open var bleOpenSucc: (() -> Void)?
     open var bleWriteSucc: (() -> Void)?
     open var bleUpdateValue: ((_ data: Data) -> Void)?
+    open var bleDidReadRSSI: ((_ RSSI: NSNumber) -> Void)?
     
     open var bleScanResult: ((_ devices: [BleDeviceModel]) -> Void)?
     private var scanBleResult = [BleDeviceModel]() {
@@ -123,6 +124,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
         Log.i("\(peripheral.name ?? "未知设备")断开连接")
         
         bleConnectFail?(peripheral)
+        bleConnectedDevice = nil
     }
     
     // MARK: 设备连接失败
@@ -152,6 +154,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
             }
             else {
                 peripheral.discoverCharacteristics(nil, for: service)
+                Log.i("uuid是--->\(service.uuid.uuidString)")
             }
         }
     }
@@ -202,7 +205,9 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
         Log.i("主动方式read收到蓝牙设备返回数据")
         
         if let data = characteristic.value {
-            bleUpdateValue?(data)
+            DispatchQueue.main.async(execute: {
+                self.bleUpdateValue?(data)
+            })
         }
     }
     
@@ -211,8 +216,15 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
         Log.i("被动方式nofity收到蓝牙设备返回数据")
         
         if let data = characteristic.value {
-            bleUpdateValue?(data)
+            DispatchQueue.main.async(execute: {
+                self.bleUpdateValue?(data)
+            })
         }
+    }
+    
+    // MARK: 收到更新readRSSI: @/link call
+    public func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
+        bleDidReadRSSI?(RSSI)
     }
     
     // MARK: - 6、公共业务
@@ -233,6 +245,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     open func disConnect(_ peripheral: CBPeripheral) {
         centerManager?.cancelPeripheralConnection(peripheral)
+        
     }
     
     open func retrievePeripheral(_ UUIDString: String) -> CBPeripheral? {
