@@ -29,6 +29,15 @@
 		6D35F00A1ED94B95002F8477 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D35EFF81ED94B95002F8477 /* IQToolbar.swift */; };
 		6D35F00B1ED94B95002F8477 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D35EFF91ED94B95002F8477 /* IQUIView+IQKeyboardToolbar.swift */; };
 		6D35F00C1ED94B95002F8477 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D35EFFB1ED94B95002F8477 /* IQKeyboardManager.bundle */; };
+		6D42B1231FB817C3002734E2 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D42B11F1FB817C3002734E2 /* BalloonMarker.swift */; };
+		6D42B1241FB817C3002734E2 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D42B1201FB817C3002734E2 /* RadarMarkerView.swift */; };
+		6D42B1251FB817C3002734E2 /* RadarMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D42B1211FB817C3002734E2 /* RadarMarkerView.xib */; };
+		6D42B1261FB817C3002734E2 /* XYMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D42B1221FB817C3002734E2 /* XYMarkerView.swift */; };
+		6D42B1311FB83CDA002734E2 /* GciPickerHeaderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D42B12F1FB83CD9002734E2 /* GciPickerHeaderImage.swift */; };
+		6D42B1321FB83CDA002734E2 /* GciPickerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D42B1301FB83CD9002734E2 /* GciPickerImage.swift */; };
+		6D42B1391FB83D9B002734E2 /* VPImageCropperViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D42B1371FB83D9A002734E2 /* VPImageCropperViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D42B13A1FB83D9B002734E2 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D42B1381FB83D9B002734E2 /* VPImageCropperViewController.m */; };
+		6D42B13C1FB840E8002734E2 /* GciUIActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D42B13B1FB840E8002734E2 /* GciUIActionSheet.swift */; };
 		6D4E23351EFF967300E9B02A /* BaseTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E23341EFF967300E9B02A /* BaseTableViewAdapter.swift */; };
 		6D6B9F031ED9D11C003D4EE4 /* AnyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE41ED9D11C003D4EE4 /* AnyExtensions.swift */; };
 		6D6B9F041ED9D11C003D4EE4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9EE51ED9D11C003D4EE4 /* Configuration.swift */; };
@@ -281,6 +290,15 @@
 		6D35EFF81ED94B95002F8477 /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
 		6D35EFF91ED94B95002F8477 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		6D35EFFB1ED94B95002F8477 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		6D42B11F1FB817C3002734E2 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		6D42B1201FB817C3002734E2 /* RadarMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarMarkerView.swift; sourceTree = "<group>"; };
+		6D42B1211FB817C3002734E2 /* RadarMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadarMarkerView.xib; sourceTree = "<group>"; };
+		6D42B1221FB817C3002734E2 /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
+		6D42B12F1FB83CD9002734E2 /* GciPickerHeaderImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GciPickerHeaderImage.swift; sourceTree = "<group>"; };
+		6D42B1301FB83CD9002734E2 /* GciPickerImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GciPickerImage.swift; sourceTree = "<group>"; };
+		6D42B1371FB83D9A002734E2 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		6D42B1381FB83D9B002734E2 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		6D42B13B1FB840E8002734E2 /* GciUIActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GciUIActionSheet.swift; sourceTree = "<group>"; };
 		6D4E23341EFF967300E9B02A /* BaseTableViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewAdapter.swift; sourceTree = "<group>"; };
 		6D6B9EE41ED9D11C003D4EE4 /* AnyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyExtensions.swift; sourceTree = "<group>"; };
 		6D6B9EE51ED9D11C003D4EE4 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -523,15 +541,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6D35EFDB1ED9466D002F8477 /* views */ = {
+		6D35EFDB1ED9466D002F8477 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6DCA0A261FB1F96E00BC15FB /* GciUIView.swift */,
-				6DCA0A201FB1F96E00BC15FB /* GciUIPickerGroupView.swift */,
-				6DCA0A211FB1F96E00BC15FB /* GciUIPickerView.swift */,
+				6D42B12E1FB83C99002734E2 /* Picker */,
 				6D35EFDE1ED947F3002F8477 /* VeryCodeBtn.swift */,
 			);
-			name = views;
+			name = View;
 			sourceTree = "<group>";
 		};
 		6D35EFE51ED94B95002F8477 /* IQKeyboardManagerSwift */ = {
@@ -596,6 +612,32 @@
 				6D35EFFB1ED94B95002F8477 /* IQKeyboardManager.bundle */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6D42B11E1FB817C3002734E2 /* Marker */ = {
+			isa = PBXGroup;
+			children = (
+				6D42B11F1FB817C3002734E2 /* BalloonMarker.swift */,
+				6D42B1201FB817C3002734E2 /* RadarMarkerView.swift */,
+				6D42B1211FB817C3002734E2 /* RadarMarkerView.xib */,
+				6D42B1221FB817C3002734E2 /* XYMarkerView.swift */,
+			);
+			path = Marker;
+			sourceTree = "<group>";
+		};
+		6D42B12E1FB83C99002734E2 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				6D42B13B1FB840E8002734E2 /* GciUIActionSheet.swift */,
+				6D42B1371FB83D9A002734E2 /* VPImageCropperViewController.h */,
+				6D42B1381FB83D9B002734E2 /* VPImageCropperViewController.m */,
+				6D42B12F1FB83CD9002734E2 /* GciPickerHeaderImage.swift */,
+				6D42B1301FB83CD9002734E2 /* GciPickerImage.swift */,
+				6DCA0A261FB1F96E00BC15FB /* GciUIView.swift */,
+				6DCA0A201FB1F96E00BC15FB /* GciUIPickerGroupView.swift */,
+				6DCA0A211FB1F96E00BC15FB /* GciUIPickerView.swift */,
+			);
+			name = Picker;
 			sourceTree = "<group>";
 		};
 		6D6B9EE31ED9D11C003D4EE4 /* HandyJSON */ = {
@@ -695,6 +737,7 @@
 		6D9C912A1FB6A29400A3195E /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				6D42B11E1FB817C3002734E2 /* Marker */,
 				6D9C912B1FB6A29400A3195E /* Animation */,
 				6D9C912E1FB6A29400A3195E /* Charts */,
 				6D9C913B1FB6A29400A3195E /* Components */,
@@ -963,14 +1006,14 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
-		6DC2BBA31EDC0A7400407A09 /* ble */ = {
+		6DC2BBA31EDC0A7400407A09 /* Ble */ = {
 			isa = PBXGroup;
 			children = (
 				6DC2BBA41EDC0A8400407A09 /* BLEScanner.swift */,
 				6DC2BBA81EDC11AF00407A09 /* BleDeviceModel.swift */,
 				6DC2BBAA1EDC199000407A09 /* BleHelper.swift */,
 			);
-			name = ble;
+			name = Ble;
 			sourceTree = "<group>";
 		};
 		6DCA09D21FB1F7EE00BC15FB /* SnapKit */ = {
@@ -1015,9 +1058,9 @@
 		6DD4637F1ED816DF00192E0A /* 自定义 */ = {
 			isa = PBXGroup;
 			children = (
-				6DC2BBA31EDC0A7400407A09 /* ble */,
-				6D35EFDB1ED9466D002F8477 /* views */,
-				6DD4638B1ED8194F00192E0A /* tools */,
+				6DC2BBA31EDC0A7400407A09 /* Ble */,
+				6D35EFDB1ED9466D002F8477 /* View */,
+				6DD4638B1ED8194F00192E0A /* Tool */,
 			);
 			name = "自定义";
 			sourceTree = "<group>";
@@ -1045,7 +1088,7 @@
 			name = "扩展类";
 			sourceTree = "<group>";
 		};
-		6DD4638B1ED8194F00192E0A /* tools */ = {
+		6DD4638B1ED8194F00192E0A /* Tool */ = {
 			isa = PBXGroup;
 			children = (
 				6D9C924B1FB6AACC00A3195E /* MBHudHelper.h */,
@@ -1058,7 +1101,7 @@
 				6D798EF41ED907DB0019E1C1 /* NavigationTool.swift */,
 				6D798F131ED91C130019E1C1 /* ColorTool.swift */,
 			);
-			name = tools;
+			name = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1069,6 +1112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D96C3A81ED8099C003CD4EB /* JKUnit.h in Headers */,
+				6D42B1391FB83D9B002734E2 /* VPImageCropperViewController.h in Headers */,
 				6D9C924D1FB6AACC00A3195E /* MBHudHelper.h in Headers */,
 				6D6B9F0B1ED9D11C003D4EE4 /* HandyJSON.h in Headers */,
 				6D9C92491FB6AAC100A3195E /* MBProgressHUD.h in Headers */,
@@ -1170,6 +1214,7 @@
 				6D35F00C1ED94B95002F8477 /* IQKeyboardManager.bundle in Resources */,
 				6D798F1F1ED931A10019E1C1 /* JKUnitBundle.bundle in Resources */,
 				6DCA0A0E1FB1F7EE00BC15FB /* Info.plist in Resources */,
+				6D42B1251FB817C3002734E2 /* RadarMarkerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1221,6 +1266,7 @@
 				6D798F1A1ED91F7B0019E1C1 /* NSObject+Extension.swift in Sources */,
 				6D35F0061ED94B95002F8477 /* IQTextView.swift in Sources */,
 				6D9C92001FB6A29500A3195E /* IScatterChartDataSet.swift in Sources */,
+				6D42B13C1FB840E8002734E2 /* GciUIActionSheet.swift in Sources */,
 				6D9C91F11FB6A29400A3195E /* RadarChartData.swift in Sources */,
 				6D9C921E1FB6A29500A3195E /* MoveViewJob.swift in Sources */,
 				6D35EFDA1ED94639002F8477 /* UIView+UI.swift in Sources */,
@@ -1235,6 +1281,7 @@
 				6D9C92361FB6A29500A3195E /* TriangleShapeRenderer.swift in Sources */,
 				6D9C92411FB6A29500A3195E /* Fill.swift in Sources */,
 				6D9C92371FB6A29500A3195E /* XShapeRenderer.swift in Sources */,
+				6D42B1231FB817C3002734E2 /* BalloonMarker.swift in Sources */,
 				6D6B9F071ED9D11C003D4EE4 /* DateFormatterTransform.swift in Sources */,
 				6DCA0A081FB1F7EE00BC15FB /* ConstraintPriorityTarget.swift in Sources */,
 				6D35F0091ED94B95002F8477 /* IQTitleBarButtonItem.swift in Sources */,
@@ -1260,6 +1307,7 @@
 				6D9C91FF1FB6A29500A3195E /* IRadarChartDataSet.swift in Sources */,
 				6D9C92181FB6A29500A3195E /* CombinedChartDataProvider.swift in Sources */,
 				6D35F0051ED94B95002F8477 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				6D42B1261FB817C3002734E2 /* XYMarkerView.swift in Sources */,
 				6DCA0A0B1FB1F7EE00BC15FB /* ConstraintView+Extensions.swift in Sources */,
 				6DCA0A0A1FB1F7EE00BC15FB /* ConstraintRelation.swift in Sources */,
 				6DCA0A0F1FB1F7EE00BC15FB /* LayoutConstraint.swift in Sources */,
@@ -1389,10 +1437,12 @@
 				6D35F0041ED94B95002F8477 /* IQKeyboardManager.swift in Sources */,
 				6D9C92161FB6A29500A3195E /* CandleChartDataProvider.swift in Sources */,
 				6DCA0A351FB1F96E00BC15FB /* GciUIPickerGroupView.swift in Sources */,
+				6D42B1311FB83CDA002734E2 /* GciPickerHeaderImage.swift in Sources */,
 				6DCA0A011FB1F7EE00BC15FB /* ConstraintMakerEditable.swift in Sources */,
 				6DCA0A041FB1F7EE00BC15FB /* ConstraintMakerPriortizable.swift in Sources */,
 				6DD463861ED8187500192E0A /* BaseUIView.swift in Sources */,
 				6DCA09F51FB1F7EE00BC15FB /* ConstraintConfig.swift in Sources */,
+				6D42B1321FB83CDA002734E2 /* GciPickerImage.swift in Sources */,
 				6D9C921F1FB6A29500A3195E /* ViewPortJob.swift in Sources */,
 				6D798F141ED91C130019E1C1 /* ColorTool.swift in Sources */,
 				6D9C92451FB6A29500A3195E /* ViewPortHandler.swift in Sources */,
@@ -1407,8 +1457,10 @@
 				6D6B9F061ED9D11C003D4EE4 /* DataTransform.swift in Sources */,
 				6D9C91C61FB6A29400A3195E /* ChartViewBase.swift in Sources */,
 				6D9C91C51FB6A29400A3195E /* CandleStickChartView.swift in Sources */,
+				6D42B13A1FB83D9B002734E2 /* VPImageCropperViewController.m in Sources */,
 				6D6B9F201ED9D11C003D4EE4 /* TransformType.swift in Sources */,
 				6D9C92211FB6A29500A3195E /* AxisRendererBase.swift in Sources */,
+				6D42B1241FB817C3002734E2 /* RadarMarkerView.swift in Sources */,
 				6D6B9F1E1ED9D11C003D4EE4 /* Serializer.swift in Sources */,
 				6D9C91C11FB6A29400A3195E /* ChartAnimationEasing.swift in Sources */,
 				6D9C91DB1FB6A29400A3195E /* BarChartDataEntry.swift in Sources */,
