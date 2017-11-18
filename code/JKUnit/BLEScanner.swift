@@ -30,8 +30,11 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     }
     open var bleConnectedDevice: BleDeviceModel?
     
+    private var retrieveDevice: BleDeviceModel?
+    
     open var bleConnectSucc: ((_ device: BleDeviceModel) -> Void)?
     open var bleConnectFail: ((_ peripheral: CBPeripheral) -> Void)?
+    open var bleCancelConnect: (() -> Void)?
     
     // MARK: - 2、私有属性
     private var centerManager: CBCentralManager?
@@ -51,9 +54,9 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     // MARK: - 5、代理
     // MARK: CBCentralManagerDelegate
     // MARK: 恢复蓝牙连接之前的状态
-//    public func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
-//        Log.i(dict)
-//    }
+    //    public func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
+    //        Log.i(dict)
+    //    }
     
     // MARK: 蓝牙状态
     public func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -74,7 +77,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
             case .poweredOff:
                 Log.i("蓝牙未开启")
                 break
-            
+                
             default:
                 break
             }
@@ -97,17 +100,25 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     // MARK: 找到蓝牙设备
     public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-
+        
         Log.i(">>>>扫描周边设备 .. 设备id:\(peripheral.identifier.uuidString), rssi: \(RSSI.stringValue), advertisementData: \(advertisementData), peripheral: \(peripheral)")
         
         let devices = scanBleResult.filter({$0.peripheral?.isEqual(peripheral) ?? false})
-        guard devices.isEmpty else {
-            return
-        }
+        let fdevices = devices.filter({$0.peripheral?.name == peripheral.name})
+        guard fdevices.isEmpty == true else {return}
         
         let device = BleDeviceModel()
         device.peripheral = peripheral
         scanBleResult.append(device)
+        
+        if let retrieve = retrieveDevice {
+            if let periph = retrieve.peripheral {
+                if periph.name == peripheral.name {
+                    connect(peripheral)
+                    retrieveDevice = nil
+                }
+            }
+        }
     }
     
     // MARK: 设备连接成功
@@ -205,9 +216,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
         Log.i("主动方式read收到蓝牙设备返回数据")
         
         if let data = characteristic.value {
-            DispatchQueue.main.async(execute: {
-                self.bleUpdateValue?(data)
-            })
+            self.bleUpdateValue?(data)
         }
     }
     
@@ -216,9 +225,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
         Log.i("被动方式nofity收到蓝牙设备返回数据")
         
         if let data = characteristic.value {
-            DispatchQueue.main.async(execute: {
-                self.bleUpdateValue?(data)
-            })
+            self.bleUpdateValue?(data)
         }
     }
     
@@ -230,11 +237,15 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     // MARK: - 6、公共业务
     open func start() {
         stop()
+        
         centerManager = CBCentralManager(delegate: self, queue: DispatchQueue.main, options: [CBCentralManagerOptionShowPowerAlertKey : false])
+        
+        if scanBleResult.count > 0 {
+            bleScanResult?(scanBleResult)
+        }
     }
     
     open func stop() {
-        scanBleResult.removeAll()
         centerManager?.stopScan()
         centerManager = nil
     }
@@ -245,7 +256,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     open func disConnect(_ peripheral: CBPeripheral) {
         centerManager?.cancelPeripheralConnection(peripheral)
-        
+        bleCancelConnect?()
     }
     
     open func retrievePeripheral(_ UUIDString: String) -> CBPeripheral? {
@@ -253,10 +264,22 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
             return nil
         }
         
-        return centerManager?.retrievePeripherals(withIdentifiers: [uuid]).first
+        let peripheral = getCenterManager()?.retrievePeripherals(withIdentifiers: [uuid]).first
+        
+        retrieveDevice = BleDeviceModel()
+        retrieveDevice?.peripheral = peripheral
+        
+        return peripheral
     }
     
     // MARK: - 7、私有业务
+    private func getCenterManager() -> CBCentralManager? {
+        if centerManager == nil {
+            centerManager = CBCentralManager(delegate: self, queue: DispatchQueue.main, options: [CBCentralManagerOptionShowPowerAlertKey : false])
+        }
+        
+        return centerManager
+    }
     
     // MARK: - 8、其他
     
