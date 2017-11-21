@@ -103,9 +103,13 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
         
         Log.i(">>>>扫描周边设备 .. 设备id:\(peripheral.identifier.uuidString), rssi: \(RSSI.stringValue), advertisementData: \(advertisementData), peripheral: \(peripheral)")
         
-        let devices = scanBleResult.filter({$0.peripheral?.isEqual(peripheral) ?? false})
-        let fdevices = devices.filter({$0.peripheral?.name == peripheral.name})
-        guard fdevices.isEmpty == true else {return}
+        for mmodel in scanBleResult {
+            if mmodel.peripheral?.name == peripheral.name {
+                mmodel.peripheral = peripheral
+                bleScanResult?(scanBleResult)
+                return
+            }
+        }
         
         let device = BleDeviceModel()
         device.peripheral = peripheral
@@ -236,9 +240,12 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     // MARK: - 6、公共业务
     open func start() {
-        stop()
-        
-        centerManager = CBCentralManager(delegate: self, queue: DispatchQueue.main, options: [CBCentralManagerOptionShowPowerAlertKey : false])
+        if let UUID = scanUUID {
+            getCenterManager()?.scanForPeripherals(withServices: [CBUUID(string: UUID)], options: [CBCentralManagerScanOptionAllowDuplicatesKey:false])
+        }
+        else {
+            getCenterManager()?.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey:false])
+        }
         
         if scanBleResult.count > 0 {
             bleScanResult?(scanBleResult)
