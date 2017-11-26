@@ -16,25 +16,26 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     open var scanUUID: String?
     
-    open var bleOpenFail: (() -> Void)?
-    open var bleOpenSucc: (() -> Void)?
-    open var bleWriteSucc: (() -> Void)?
-    open var bleUpdateValue: ((_ data: Data) -> Void)?
-    open var bleDidReadRSSI: ((_ RSSI: NSNumber) -> Void)?
+    open var bleOpenFail: (() -> Void)?//打开失败
+    open var bleOpenSucc: (() -> Void)?//打开成功
+    open var bleWriteSucc: (() -> Void)?//写入成功
+    open var bleUpdateValue: ((_ data: Data) -> Void)?//收入通知数据
+    open var bleDidReadRSSI: ((_ RSSI: NSNumber) -> Void)?//收到rssi
     
-    open var bleScanResult: ((_ devices: [BleDeviceModel]) -> Void)?
+    open var bleScanResult: ((_ devices: [BleDeviceModel]) -> Void)?//搜索设备数量
     private var scanBleResult = [BleDeviceModel]() {
         didSet {
             bleScanResult?(scanBleResult)
         }
     }
-    open var bleConnectedDevice: BleDeviceModel?
+    open var bleConnectedDevice: BleDeviceModel?//连接设备
     
-    private var retrieveDevice: BleDeviceModel?
+    private var retrieveDevice: BleDeviceModel?//上次连接的设备
     
-    open var bleConnectSucc: ((_ device: BleDeviceModel) -> Void)?
-    open var bleConnectFail: ((_ peripheral: CBPeripheral) -> Void)?
-    open var bleCancelConnect: (() -> Void)?
+    open var connectedSuccBlock: (() -> Void)?//连接成功不传设备
+    open var bleConnectSucc: ((_ device: BleDeviceModel) -> Void)?//连接成功
+    open var bleConnectFail: ((_ peripheral: CBPeripheral) -> Void)?//连接失败
+    open var bleCancelConnect: (() -> Void)?//断开连接
     
     // MARK: - 2、私有属性
     private var centerManager: CBCentralManager?
@@ -197,7 +198,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
         if let device = devices.first {
             bleConnectedDevice = device
             bleConnectSucc?(device)
-            
+            connectedSuccBlock?()
             peripheral.readValue(for: characteristic)
             //设置 characteristic 的 notifying 属性 为 true ， 表示接受广播
             peripheral.setNotifyValue(true, for: characteristic)

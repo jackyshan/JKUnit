@@ -76,7 +76,12 @@ open class BaseViewController: UIViewController {
         leftBtn.adjustsImageWhenHighlighted = false
         let leftBtnItem = UIBarButtonItem(customView: leftBtn)
         leftBtn.addTarget(self, action: #selector(self.backBtnAction), for: .touchUpInside)
-        self.navigationItem.setLeftBarButton(leftBtnItem, animated: false)
+        
+        let leftBtn1 = UIButton(type: .custom)
+        leftBtn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        leftBtn1.addTarget(self, action: #selector(self.backBtnAction), for: .touchUpInside)
+        let leftBtnItem1 = UIBarButtonItem.init(customView: leftBtn1)
+        self.navigationItem.setLeftBarButtonItems([leftBtnItem, leftBtnItem1], animated: false)
     }
     
     open func showRightButton(_ colorImage: UIImage = NavigationTool.navClearImage) {
