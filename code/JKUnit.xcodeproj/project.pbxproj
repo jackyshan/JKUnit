@@ -66,6 +66,7 @@
 		6D6B9F1F1ED9D11C003D4EE4 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9F001ED9D11C003D4EE4 /* TransformOf.swift */; };
 		6D6B9F201ED9D11C003D4EE4 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9F011ED9D11C003D4EE4 /* TransformType.swift */; };
 		6D6B9F211ED9D11C003D4EE4 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B9F021ED9D11C003D4EE4 /* URLTransform.swift */; };
+		6D6F44621FDB8F5000C96238 /* BaseTableViewGroupAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F44611FDB8F5000C96238 /* BaseTableViewGroupAdapter.swift */; };
 		6D798EF31ED906C60019E1C1 /* ImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D798EF21ED906C60019E1C1 /* ImageTool.swift */; };
 		6D798EF51ED907DB0019E1C1 /* NavigationTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D798EF41ED907DB0019E1C1 /* NavigationTool.swift */; };
 		6D798F141ED91C130019E1C1 /* ColorTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D798F131ED91C130019E1C1 /* ColorTool.swift */; };
@@ -328,6 +329,7 @@
 		6D6B9F001ED9D11C003D4EE4 /* TransformOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOf.swift; sourceTree = "<group>"; };
 		6D6B9F011ED9D11C003D4EE4 /* TransformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformType.swift; sourceTree = "<group>"; };
 		6D6B9F021ED9D11C003D4EE4 /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
+		6D6F44611FDB8F5000C96238 /* BaseTableViewGroupAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewGroupAdapter.swift; sourceTree = "<group>"; };
 		6D798EF21ED906C60019E1C1 /* ImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTool.swift; sourceTree = "<group>"; };
 		6D798EF41ED907DB0019E1C1 /* NavigationTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTool.swift; sourceTree = "<group>"; };
 		6D798EFF1ED90FF20019E1C1 /* JKUnitBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKUnitBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1076,6 +1078,7 @@
 				6DD463851ED8187500192E0A /* BaseUIView.swift */,
 				6DD463881ED818AC00192E0A /* BaseNaivigationController.swift */,
 				6D4E23341EFF967300E9B02A /* BaseTableViewAdapter.swift */,
+				6D6F44611FDB8F5000C96238 /* BaseTableViewGroupAdapter.swift */,
 			);
 			name = "基础类";
 			sourceTree = "<group>";
@@ -1334,6 +1337,7 @@
 				6DCA09F61FB1F7EE00BC15FB /* ConstraintConstantTarget.swift in Sources */,
 				6D9C92381FB6A29500A3195E /* ScatterChartRenderer.swift in Sources */,
 				6D9C91F01FB6A29400A3195E /* PieChartDataSet.swift in Sources */,
+				6D6F44621FDB8F5000C96238 /* BaseTableViewGroupAdapter.swift in Sources */,
 				6D9C91D61FB6A29400A3195E /* MarkerView.swift in Sources */,
 				6D9C92021FB6A29500A3195E /* DefaultAxisValueFormatter.swift in Sources */,
 				6DD4638D1ED8197700192E0A /* Log.swift in Sources */,

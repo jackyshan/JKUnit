@@ -84,6 +84,18 @@ open class BaseViewController: UIViewController {
         self.navigationItem.setLeftBarButtonItems([leftBtnItem, leftBtnItem1], animated: false)
     }
     
+    open func showClearLeftButton(_ colorImage: UIImage = NavigationTool.navBlackBackImage ?? NavigationTool.navClearImage) {
+        let leftBtn = UIButton(type: .custom)
+        leftBtn.setImage(colorImage, for: UIControlState())
+        leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
+        leftBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        leftBtn.adjustsImageWhenHighlighted = false
+        let leftBtnItem = UIBarButtonItem(customView: leftBtn)
+        leftBtn.addTarget(self, action: #selector(self.backBtnAction), for: .touchUpInside)
+        
+        self.navigationItem.setLeftBarButtonItems([leftBtnItem], animated: false)
+    }
+    
     open func showRightButton(_ colorImage: UIImage = NavigationTool.navClearImage) {
         let rightBtn = UIButton(type: .custom)
         rightBtn.setImage(colorImage, for: UIControlState())
