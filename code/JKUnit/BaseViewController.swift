@@ -66,7 +66,7 @@ open class BaseViewController: UIViewController {
     open func didViewAnimateComplete(){ }
     open func didSnpKitUiLoad() -> Void{}
     open func didSystemAutoLayoutComplete() -> Void{}
-
+    
     // MARK: - navigation相关
     open func showLeftButton(_ colorImage: UIImage = NavigationTool.navBlackBackImage ?? NavigationTool.navClearImage) {
         let leftBtn = UIButton(type: .custom)

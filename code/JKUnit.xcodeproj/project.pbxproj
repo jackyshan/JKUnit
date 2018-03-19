@@ -211,6 +211,8 @@
 		6D9C924A1FB6AAC100A3195E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C92481FB6AAC100A3195E /* MBProgressHUD.m */; };
 		6D9C924D1FB6AACC00A3195E /* MBHudHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9C924B1FB6AACC00A3195E /* MBHudHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D9C924E1FB6AACC00A3195E /* MBHudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9C924C1FB6AACC00A3195E /* MBHudHelper.m */; };
+		6DAC2F7720424DBA0089523D /* UILabel+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAC2F7620424DBA0089523D /* UILabel+UI.swift */; };
+		6DAC2F79204257130089523D /* UIViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAC2F78204257130089523D /* UIViewController+UI.swift */; };
 		6DC2BBA51EDC0A8400407A09 /* BLEScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2BBA41EDC0A8400407A09 /* BLEScanner.swift */; };
 		6DC2BBA91EDC11AF00407A09 /* BleDeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2BBA81EDC11AF00407A09 /* BleDeviceModel.swift */; };
 		6DC2BBAB1EDC199000407A09 /* BleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2BBAA1EDC199000407A09 /* BleHelper.swift */; };
@@ -478,6 +480,8 @@
 		6D9C92481FB6AAC100A3195E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		6D9C924B1FB6AACC00A3195E /* MBHudHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBHudHelper.h; sourceTree = "<group>"; };
 		6D9C924C1FB6AACC00A3195E /* MBHudHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBHudHelper.m; sourceTree = "<group>"; };
+		6DAC2F7620424DBA0089523D /* UILabel+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+UI.swift"; sourceTree = "<group>"; };
+		6DAC2F78204257130089523D /* UIViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UI.swift"; sourceTree = "<group>"; };
 		6DC2BBA41EDC0A8400407A09 /* BLEScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEScanner.swift; sourceTree = "<group>"; };
 		6DC2BBA81EDC11AF00407A09 /* BleDeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleDeviceModel.swift; sourceTree = "<group>"; };
 		6DC2BBAA1EDC199000407A09 /* BleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleHelper.swift; sourceTree = "<group>"; };
@@ -1087,8 +1091,10 @@
 			isa = PBXGroup;
 			children = (
 				6D35EFDC1ED946DA002F8477 /* UIButton+UI.swift */,
+				6DAC2F7620424DBA0089523D /* UILabel+UI.swift */,
 				6D35EFD91ED94639002F8477 /* UIView+UI.swift */,
 				6D798F191ED91F7B0019E1C1 /* NSObject+Extension.swift */,
+				6DAC2F78204257130089523D /* UIViewController+UI.swift */,
 			);
 			name = "扩展类";
 			sourceTree = "<group>";
@@ -1285,6 +1291,7 @@
 				6D9C91CA1FB6A29400A3195E /* PieChartView.swift in Sources */,
 				6D35EFFE1ED94B95002F8477 /* IQUITextFieldView+Additions.swift in Sources */,
 				6D9C92361FB6A29500A3195E /* TriangleShapeRenderer.swift in Sources */,
+				6DAC2F79204257130089523D /* UIViewController+UI.swift in Sources */,
 				6D9C92411FB6A29500A3195E /* Fill.swift in Sources */,
 				6D9C92371FB6A29500A3195E /* XShapeRenderer.swift in Sources */,
 				6D42B1231FB817C3002734E2 /* BalloonMarker.swift in Sources */,
@@ -1464,6 +1471,7 @@
 				6D9C91E31FB6A29400A3195E /* CandleChartDataEntry.swift in Sources */,
 				6D6B9F061ED9D11C003D4EE4 /* DataTransform.swift in Sources */,
 				6D9C91C61FB6A29400A3195E /* ChartViewBase.swift in Sources */,
+				6DAC2F7720424DBA0089523D /* UILabel+UI.swift in Sources */,
 				6D9C91C51FB6A29400A3195E /* CandleStickChartView.swift in Sources */,
 				6D42B13A1FB83D9B002734E2 /* VPImageCropperViewController.m in Sources */,
 				6D6B9F201ED9D11C003D4EE4 /* TransformType.swift in Sources */,

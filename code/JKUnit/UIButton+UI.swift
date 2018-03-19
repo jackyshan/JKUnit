@@ -39,5 +39,66 @@ public extension UIButton {
             }
         }
     }
+    
+    
+    @IBInspectable var selectedBgImgColor: UIColor? {
+        get {
+            return self.selectedBgImgColor
+        }
+        
+        set {
+            if newValue != nil {
+                self.setBackgroundImage(ImageTool.colorImage(CGSize.init(width: self.bounds.width, height: self.bounds.height), color: newValue!), for: .selected)
+            }
+            else {
+                self.setBackgroundImage(nil, for: .selected)
+            }
+        }
+    }
+    
+    @IBInspectable var deSelectedBgImgColor: UIColor? {
+        get {
+            return self.deSelectedBgImgColor
+        }
+        
+        set {
+            if newValue != nil {
+                self.setBackgroundImage(ImageTool.colorImage(CGSize.init(width: self.bounds.width, height: self.bounds.height), color: newValue!), for: .normal)
+            }
+            else {
+                self.setBackgroundImage(nil, for: .normal)
+            }
+        }
+    }
+
+    @IBInspectable var localString: String? {
+        get {
+            return self.currentTitle
+        }
+        
+        set {
+            if newValue != nil {
+                self.setTitle(NSLocalizedString(newValue!, comment: ""), for: .normal)
+            }
+            else {
+                self.setTitle(nil, for: .normal)
+            }
+        }
+    }
+    
+    @IBInspectable var localSelectedString: String? {
+        get {
+            return self.currentTitle
+        }
+        
+        set {
+            if newValue != nil {
+                self.setTitle(NSLocalizedString(newValue!, comment: ""), for: .selected)
+            }
+            else {
+                self.setTitle(nil, for: .selected)
+            }
+        }
+    }
 
 }
