@@ -260,6 +260,7 @@
 		6DD463891ED818AC00192E0A /* BaseNaivigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD463881ED818AC00192E0A /* BaseNaivigationController.swift */; };
 		6DD4638D1ED8197700192E0A /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD4638C1ED8197700192E0A /* Log.swift */; };
 		6DD4638F1ED81D8D00192E0A /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD4638E1ED81D8D00192E0A /* Tools.swift */; };
+		6DF1D506208612C500FEFE5C /* GciNavAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF1D505208612C400FEFE5C /* GciNavAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -529,6 +530,7 @@
 		6DD463881ED818AC00192E0A /* BaseNaivigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNaivigationController.swift; sourceTree = "<group>"; };
 		6DD4638C1ED8197700192E0A /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		6DD4638E1ED81D8D00192E0A /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		6DF1D505208612C400FEFE5C /* GciNavAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GciNavAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1102,6 +1104,7 @@
 		6DD4638B1ED8194F00192E0A /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				6DF1D505208612C400FEFE5C /* GciNavAlert.swift */,
 				6D9C924B1FB6AACC00A3195E /* MBHudHelper.h */,
 				6D9C924C1FB6AACC00A3195E /* MBHudHelper.m */,
 				6DCA09CE1FB1F73E00BC15FB /* ViewUitl.swift */,
@@ -1272,6 +1275,7 @@
 				6D35EFDF1ED947F3002F8477 /* VeryCodeBtn.swift in Sources */,
 				6D9C92321FB6A29500A3195E /* CircleShapeRenderer.swift in Sources */,
 				6D9C91FE1FB6A29500A3195E /* IPieChartDataSet.swift in Sources */,
+				6DF1D506208612C500FEFE5C /* GciNavAlert.swift in Sources */,
 				6D6B9F041ED9D11C003D4EE4 /* Configuration.swift in Sources */,
 				6DCA09FC1FB1F7EE00BC15FB /* ConstraintLayoutGuide.swift in Sources */,
 				6D9C92261FB6A29500A3195E /* ChartDataRendererBase.swift in Sources */,

@@ -255,7 +255,6 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     
     open func stop() {
         centerManager?.stopScan()
-        centerManager = nil
     }
     
     open func connect(_ peripheral: CBPeripheral) {
@@ -265,6 +264,7 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
     open func disConnect(_ peripheral: CBPeripheral) {
         centerManager?.cancelPeripheralConnection(peripheral)
         bleCancelConnect?()
+        start()
     }
     
     open func retrievePeripheral(_ UUIDString: String) -> CBPeripheral? {
