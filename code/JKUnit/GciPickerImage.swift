@@ -18,10 +18,10 @@ open class GciPickerImage: NSObject,UIImagePickerControllerDelegate,UINavigation
         self.mAction = action
         self.mCancel = cancel
         sheet = GciUIActionSheet<PickType>()
-        sheet.setDataSoure([PickType(id: 0, name: "拍照"),PickType(id: 1, name: "相册")]) { (obj) -> String in
+        sheet.setDataSoure([PickType(id: 0, name: "Camera"),PickType(id: 1, name: "Photo")]) { (obj) -> String in
             return obj.name
         }
-        sheet.showInView("请选择", view: contoller.view) {[weak self] (obj) -> Void in
+        sheet.showInView("Choose", view: contoller.view) {[weak self] (obj) -> Void in
             switch obj.id {
             case 0:
                 let imagevc = UIImagePickerController()
