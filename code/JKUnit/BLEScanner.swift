@@ -161,17 +161,24 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
         Log.i("发现服务 ..")
         
         for service in peripheral.services! {
-            //需要连接的 CBCharacteristic 的 UUID
-            if let UUID = scanUUID {
-                if service.uuid.uuidString == UUID {
-                    peripheral.discoverCharacteristics(nil, for: service)
-                    break
-                }
-            }
-            else {
+            Log.i("服务uuid")
+            Log.i(service.uuid.uuidString)
+            
+            if service.uuid.uuidString == "FFF0" {
                 peripheral.discoverCharacteristics(nil, for: service)
-                Log.i("uuid是--->\(service.uuid.uuidString)")
+                break
             }
+            //需要连接的 CBCharacteristic 的 UUID
+//            if let UUID = scanUUID {
+//                if service.uuid.uuidString == UUID {
+//                    peripheral.discoverCharacteristics(nil, for: service)
+//                    break
+//                }
+//            }
+//            else {
+//                peripheral.discoverCharacteristics(nil, for: service)
+//                Log.i("uuid是--->\(service.uuid.uuidString)")
+//            }
         }
     }
     
@@ -185,29 +192,53 @@ open class BLEScanner: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
         guard let characteristics = service.characteristics else {
             return
         }
-        
-        Log.i("发现服务特征 \(service.uuid), 特性数: \(String(describing: service.characteristics?.count))")
-        
-        //取第一个特征
-        guard let characteristic = characteristics.first else {
-            return
-        }
+
+        guard scanBleResult.count > 0 else {return}
         
         let devices = scanBleResult.filter({$0.peripheral!.isEqual(peripheral)})
-        devices.first?.characteristic = characteristic
-        if let device = devices.first {
-            bleConnectedDevice = device
-            bleConnectSucc?(device)
-            connectedSuccBlock?()
-            peripheral.readValue(for: characteristic)
-            //设置 characteristic 的 notifying 属性 为 true ， 表示接受广播
-            peripheral.setNotifyValue(true, for: characteristic)
-        }
+        guard let device = devices.first else {return}
         
-        if let data = characteristic.value {
-            Log.i("特性值byte： \((data as NSData).bytes)")
-            Log.i("特性值string： \(String(describing: String(data: data, encoding: String.Encoding.utf8)))")
+        for characteristic in characteristics {
+            Log.i("特征uuid")
+            Log.i(characteristic.uuid.uuidString)
+            
+            if characteristic.uuid.uuidString == "FFF1" {
+                //读
+                device.readCharacteristic = characteristic
+                bleConnectedDevice = device
+                bleConnectSucc?(device)
+                
+                peripheral.readValue(for: characteristic)
+                //设置 characteristic 的 notifying 属性 为 true ， 表示接受广播
+                peripheral.setNotifyValue(true, for: characteristic)
+
+            }
+            else if characteristic.uuid.uuidString == "FFF2" {
+                //写
+                device.writeCharacteristic = characteristic
+                
+                peripheral.readValue(for: characteristic)
+                //设置 characteristic 的 notifying 属性 为 true ， 表示接受广播
+                peripheral.setNotifyValue(true, for: characteristic)
+
+            }
+            
         }
+        connectedSuccBlock?()
+
+        
+//        Log.i("发现服务特征 \(service.uuid), 特性数: \(String(describing: service.characteristics?.count))")
+//
+//        //取第一个特征
+//        guard let characteristic = characteristics.first else {
+//            return
+//        }
+//
+//
+//        if let data = characteristic.value {
+//            Log.i("特性值byte： \((data as NSData).bytes)")
+//            Log.i("特性值string： \(String(describing: String(data: data, encoding: String.Encoding.utf8)))")
+//        }
     }
     
     // MARK: 发送写入蓝牙设备成功

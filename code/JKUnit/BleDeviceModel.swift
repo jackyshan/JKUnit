@@ -11,5 +11,6 @@ import CoreBluetooth
 
 open class BleDeviceModel: NSObject {
     open var peripheral: CBPeripheral?
-    open var characteristic: CBCharacteristic?
+    open var readCharacteristic: CBCharacteristic?
+    open var writeCharacteristic: CBCharacteristic?
 }
