@@ -2,6 +2,7 @@
 
 #### 添加
 git submodule add git@github.com:ReactiveX/RxSwift.git code/RxSwift
+
 添加子模块，目录结构
 [submodule "code/RxSwift"]
         path = code/RxSwift
